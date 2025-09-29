@@ -1,3 +1,13 @@
+// optimization 
+// in calculating mid , if we have start = INT_MAX AND end = INT_MAX
+// then (start+end)/2 ,will give a condition of overflow.
+// to resolve it use ->
+// start + (end - start)/2
+
+
+
+
+
 import java.util.*;
 
 public class Binary {
@@ -9,7 +19,13 @@ public class Binary {
         while ( start <= end){
 
             // middle element of array
-            int mid = ( start + end )/2;
+
+            // normal mid calculation (overflow condition may occur)
+            // int mid = ( start + end )/2;
+
+            // Optimised mid calculation
+            int mid = start + (end -start)/2;
+            
 
             // conditions to find exact element
             if (key > arr[mid]){
@@ -29,7 +45,7 @@ public class Binary {
     public static void main(String[] args) {
 
         // initialize array
-        int[] arr = { 12, 36, 45, 51, 66, 71, 84, 99, 121 };
+        int[] arr = { 12, 36, 45, 51, 66, 71, 84, 99 };
         System.out.println("Array : " + Arrays.toString(arr));
 
         // get key
@@ -48,3 +64,5 @@ public class Binary {
         }
     }
 }
+
+
