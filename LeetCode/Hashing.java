@@ -3,7 +3,7 @@
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class Hashing{
+public class Hashing {
 
     public static void main(String[] args){
 
@@ -20,5 +20,20 @@ public class Hashing{
 
         // print
         System.out.println("HashSet : "+mySet);
+        System.out.println("Size : "+mySet.size());
+
+        // deletion
+        System.out.println("Element to remove : ");
+        int rem = sc.nextInt();
+        if(mySet.contains(rem)){
+            mySet.remove(rem);
+            System.out.println("Removed Successfully");
+        }else{
+            System.out.println("Element not Exists.");
+        }
+        
+        System.out.println("Updated HashSet : "+mySet);
+        System.out.println("Updated Size : "+mySet.size());
+    
     }
 }
